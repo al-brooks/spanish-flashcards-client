@@ -1,6 +1,6 @@
 import "./App.css";
-
-const API_KEY = process.env.REACT_APP_API_KEY;
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
