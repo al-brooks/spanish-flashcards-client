@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import LoginForm from "../../components/LoginForm/LoginForm";
 
 export default function AuthPage({ setUser }) {
   const [formToggle, setFormToggle] = useState(true);
@@ -14,6 +15,7 @@ export default function AuthPage({ setUser }) {
       {formToggle ? (
         <>
           <button onClick={handleToggle}>Sign Up</button>
+          <LoginForm setUser={setUser} />
         </>
       ) : (
         <>
