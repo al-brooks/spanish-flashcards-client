@@ -1,7 +1,7 @@
 import { useState } from "react";
 import * as translateServices from "../../utilities/translate-service";
 
-export default function TranslateForm({ setTranslation }) {
+export default function TranslateForm({ setTranslations }) {
   const [search, setSearch] = useState({
     searchTerm: ""
   });
@@ -12,7 +12,7 @@ export default function TranslateForm({ setTranslation }) {
     evt.preventDefault();
     try {
       const result = await translateServices.getTranslation(search.searchTerm);
-      setTranslation(result);
+      setTranslations(result);
     } catch {
       setError("Oops, we weren't able to find this...");
     }
