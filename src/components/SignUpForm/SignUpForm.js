@@ -6,15 +6,17 @@ export default function SignUpForm({ setUser }) {
     name: "",
     email: "",
     password: "",
-    confirm: "",
-    error: ""
+    confirm: ""
   });
+
+  const [error, setError] = useState("");
 
   const handleChange = evt => {
     setUserData({
-      [evt.target.name]: evt.target.value,
-      error: ""
+      ...userData,
+      [evt.target.name]: evt.target.value
     });
+    setError("");
   };
 
   const handleSubmit = async evt => {
@@ -26,11 +28,11 @@ export default function SignUpForm({ setUser }) {
       const user = await signUp(formData);
       setUser(user);
     } catch {
-      setUserData({
-        error: "Sign Up Failed - Try Again!"
-      });
+      setError("Sign Up Failed - Try Again!");
     }
   };
+
+  const disable = userData.password !== userData.confirm;
 
   return (
     <div>
@@ -68,12 +70,12 @@ export default function SignUpForm({ setUser }) {
             onChange={handleChange}
             required
           />
-          <button type="submit" disabled={disabled}>
+          <button type="submit" disabled={disable}>
             Sign Up
           </button>
         </form>
       </div>
-      <p className="error-msg">&nbsp;{userData.error}</p>
+      <p className="error-msg">&nbsp;{error}</p>
     </div>
   );
 }
