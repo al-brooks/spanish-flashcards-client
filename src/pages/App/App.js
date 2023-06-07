@@ -13,13 +13,11 @@ function App() {
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
-          <Routes>{/* insert routes for users */}</Routes>
+          {/* <Routes>insert routes for users</Routes> */}
         </>
       ) : (
         <AuthPage path="/" setUser={setUser} />
       )}
-      <h1>App</h1>
-      <p>Spanish Flashcard App</p>
     </div>
   );
 }
