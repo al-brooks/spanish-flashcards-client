@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { getUser } from "../../utilities/users-service";
 import NavBar from "../../components/NavBar/NavBar";
 import AuthPage from "../AuthPage/AuthPage";
+import SearchPage from "../SearchPage/SearchPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -18,6 +19,7 @@ function App() {
       ) : (
         <AuthPage path="/" setUser={setUser} />
       )}
+      <SearchPage />
     </div>
   );
 }
