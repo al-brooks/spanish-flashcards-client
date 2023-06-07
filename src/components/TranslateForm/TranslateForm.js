@@ -12,7 +12,10 @@ export default function TranslateForm({ setTranslations }) {
     evt.preventDefault();
     try {
       const result = await translateServices.getTranslation(search.searchTerm);
-      setTranslations(result);
+      setTranslations({
+        searchWord: search.searchTerm,
+        terms: result
+      });
     } catch {
       setError("Oops, we weren't able to find this...");
     }
