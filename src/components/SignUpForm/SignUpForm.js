@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { signUp } from "../../utilities/users-service";
+import * as usersService from "../../utilities/users-service";
 
 export default function SignUpForm({ setUser }) {
   const [userData, setUserData] = useState({
@@ -25,7 +25,7 @@ export default function SignUpForm({ setUser }) {
       const formData = { ...userData };
       delete formData.confirm;
       delete formData.error;
-      const user = await signUp(formData);
+      const user = await usersService.signUp(formData);
       setUser(user);
     } catch {
       setError("Sign Up Failed - Try Again!");
