@@ -11,7 +11,7 @@ export default function TranslateForm({ setTranslation }) {
   const handleSubmit = async evt => {
     evt.preventDefault();
     try {
-      const result = await translateServices.getTranslation(search);
+      const result = await translateServices.getTranslation(search.searchTerm);
       setTranslation(result);
     } catch {
       setError("Oops, we weren't able to find this...");
