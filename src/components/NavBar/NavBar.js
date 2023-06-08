@@ -8,9 +8,10 @@ export default function NavBar({ user, setUser }) {
   };
 
   return (
-    <nav>
+    <nav style={{ display: "flex", justifyContent: "space-evenly" }}>
       <Link to={"/"}>Home</Link>
       <Link to={"/flashcards"}>View Flashcards</Link>
+      <Link to={"/flashcards/decks"}>View Flashcard Decks</Link>
       <Link to={"/flashcards/new"}>Create Flashcards</Link>
       <Link to="" onClick={handleLogOut}>
         Log Out
