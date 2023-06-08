@@ -6,6 +6,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import AuthPage from "../AuthPage/AuthPage";
 import SearchPage from "../SearchPage/SearchPage";
 import CreateFlashcardPage from "../CreateFlashcardPage/CreateFlashcardPage";
+import FlashcardListPage from "../FlashcardListPage/FlashcardListPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -16,7 +17,8 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/flashcards/new" element={CreateFlashcardPage} />
+            <Route path="/flashcards" element={<FlashcardListPage />} />
+            <Route path="/flashcards/new" element={<CreateFlashcardPage />} />
           </Routes>
         </>
       ) : (
