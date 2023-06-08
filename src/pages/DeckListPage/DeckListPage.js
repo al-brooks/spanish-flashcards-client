@@ -1,10 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import DeckForm from "../../components/DeckForm/DeckForm";
+import * as flashcardsService from "../../utilities/flashcards-service";
 
 export default function DeckListPage() {
+  const [toggleRerender, setToggleRerender] = useState(false);
   const [decks, setDecks] = useState([]);
-  // need to fetch all decks from database
-  console.log(decks);
+  const [error, setError] = useState("");
+
+  const fetchDecks = useCallback(async () => {
+    try {
+      const response = await flashcardsService.getAllDecks();
+      setDecks(response);
+      setToggleRerender(false);
+      setError("");
+    } catch {
+      setError("Oh no! Something went wrong...");
+    }
+  }, [toggleRerender]);
+
+  useEffect(() => {
+    fetchDecks();
+  }, [fetchDecks]);
 
   return (
     <main>
@@ -24,7 +40,7 @@ export default function DeckListPage() {
       </section>
       <section>
         <h2>Create a Deck</h2>
-        <DeckForm setDecks={(decks, setDecks)} />
+        <DeckForm setToggleRerender={setToggleRerender} />
       </section>
     </main>
   );

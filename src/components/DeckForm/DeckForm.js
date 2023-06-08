@@ -1,7 +1,7 @@
 import { useState } from "react";
 import * as flashcardsService from "../../utilities/flashcards-service";
 
-export default function DeckForm() {
+export default function DeckForm({ setToggleRerender }) {
   const [deck, setDeck] = useState({
     name: ""
   });
@@ -19,7 +19,8 @@ export default function DeckForm() {
   const handleSubmit = async evt => {
     evt.preventDefault();
     try {
-      await flashcardsService.createDeck(deck);
+      const response = await flashcardsService.createDeck(deck);
+      if (response) setToggleRerender(true);
     } catch {
       setError("Deck couldn't be created - Try again");
     }
