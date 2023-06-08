@@ -1,6 +1,6 @@
 import * as flashcardsAPI from "./flashcards-api";
 
-export async function createDeck(name) {
-  const deck = await flashcardsAPI.createDeck(name);
+export async function createDeck(data) {
+  const deck = await flashcardsAPI.createDeck(data);
   return deck;
 }

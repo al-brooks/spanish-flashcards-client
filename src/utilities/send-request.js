@@ -12,7 +12,7 @@ export default async function sendRequest(url, method = "GET", payload = null) {
     const token = getToken();
     if (token) {
       options.headers ||= {};
-      options.header.Authorization = `Bearer ${token}`;
+      options.headers.Authorization = `Bearer ${token}`;
     }
 
     const res = await fetch(url, options);
