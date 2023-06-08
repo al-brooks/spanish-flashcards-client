@@ -7,6 +7,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import SearchPage from "../SearchPage/SearchPage";
 import CreateFlashcardPage from "../CreateFlashcardPage/CreateFlashcardPage";
 import FlashcardListPage from "../FlashcardListPage/FlashcardListPage";
+import DeckListPage from "../DeckListPage/DeckListPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route path="/flashcards" element={<FlashcardListPage />} />
             <Route path="/flashcards/new" element={<CreateFlashcardPage />} />
+            <Route path="/flashcards/decks" element={<DeckListPage />} />
           </Routes>
         </>
       ) : (
