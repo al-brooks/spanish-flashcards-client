@@ -5,6 +5,7 @@ import { getUser } from "../../utilities/users-service";
 import NavBar from "../../components/NavBar/NavBar";
 import AuthPage from "../AuthPage/AuthPage";
 import SearchPage from "../SearchPage/SearchPage";
+import CreateFlashcardPage from "../CreateFlashcardPage/CreateFlashcardPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -14,7 +15,9 @@ function App() {
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
-          {/* <Routes>insert routes for users</Routes> */}
+          <Routes>
+            <Route path="/flashcards/new" element={CreateFlashcardPage} />
+          </Routes>
         </>
       ) : (
         <AuthPage path="/" setUser={setUser} />
