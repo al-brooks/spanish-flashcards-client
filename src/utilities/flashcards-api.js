@@ -5,3 +5,7 @@ const FOLDERS_URL = "/api/folders";
 export function createDeck(data) {
   return sendRequest(DECKS_URL, "POST", data);
 }
+
+export function getAllDecks() {
+  return sendRequest(DECKS_URL);
+}

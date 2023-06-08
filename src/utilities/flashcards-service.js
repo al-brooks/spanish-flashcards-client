@@ -4,3 +4,8 @@ export async function createDeck(data) {
   const deck = await flashcardsAPI.createDeck(data);
   return deck;
 }
+
+export async function getAllDecks() {
+  const decks = await flashcardsAPI.getAllDecks();
+  return decks;
+}
