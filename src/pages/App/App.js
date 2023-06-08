@@ -18,15 +18,18 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
+            <Route path="/translate" element={<SearchPage />} />
             <Route path="/flashcards" element={<FlashcardListPage />} />
             <Route path="/flashcards/new" element={<CreateFlashcardPage />} />
             <Route path="/flashcards/decks" element={<DeckListPage />} />
           </Routes>
         </>
       ) : (
-        <AuthPage path="/" setUser={setUser} />
+        <main>
+          <AuthPage path="/" setUser={setUser} />
+          <SearchPage />
+        </main>
       )}
-      <SearchPage />
     </div>
   );
 }
