@@ -1,11 +1,15 @@
 import { useState } from "react";
 import TranslateForm from "../../components/TranslateForm/TranslateForm";
+import { getToken } from "../../utilities/users-service";
 
 export default function SearchPage() {
   const [translations, setTranslations] = useState({
     searchWord: "",
     terms: []
   });
+
+  // add functionality that if user is logged in then can save translation
+  let loggedIn = getToken();
 
   return (
     <section>
