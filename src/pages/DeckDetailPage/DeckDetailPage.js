@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
 import TranslateForm from "../../components/TranslateForm/TranslateForm";
 
@@ -11,7 +11,6 @@ export default function DeckDetailPage() {
   const fetchDeck = useCallback(async () => {
     try {
       const response = await flashcardsService.getDeck(id);
-      console.log(response);
       if (response) {
         setDeck(response);
         setError("");
@@ -33,7 +32,6 @@ export default function DeckDetailPage() {
   };
 
   const loaded = () => {
-    console.log(deck.cards);
     return (
       <main>
         <h1>Deck Detail Page</h1>
@@ -52,12 +50,16 @@ export default function DeckDetailPage() {
                       <p>{card.content}</p>
                       <p>{card.translation}</p>
                       <p>{card.difficulty}</p>
-                      <form action="">
-                        <button>Edit</button>
-                      </form>
-                      <form action="">
-                        <button>Delete</button>
-                      </form>
+                      <Link
+                        to={`flashcards/decks/${deck._id}/cards/${card._d}/edit`}
+                      >
+                        Edit
+                      </Link>
+                      <Link
+                        to={`flashcards/decks/${deck._id}/cards/${card._d}/delete`}
+                      >
+                        Delete
+                      </Link>
                     </article>
                   );
                 })
