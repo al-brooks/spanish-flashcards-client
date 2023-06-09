@@ -22,7 +22,7 @@ function App() {
             <Route path="/flashcards" element={<DeckListPage />} />
             <Route
               path="/flashcards/decks/create"
-              element={<DeckDetailPage />}
+              element={<CreateDeckPage />}
             />
             <Route path="/flashcards/decks/:id" element={<DeckDetailPage />} />
           </Routes>
