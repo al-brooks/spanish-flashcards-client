@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import DeckForm from "../../components/DeckForm/DeckForm";
 import * as flashcardsService from "../../utilities/flashcards-service";
 
 export default function DeckListPage() {
@@ -24,6 +23,10 @@ export default function DeckListPage() {
 
   return (
     <main>
+      <h1>Here are your flashcard decks!</h1>
+      <section>
+        <button>Create New Deck</button>
+      </section>
       <section>
         <h2>Deck List</h2>
         {decks.length > 0 ? (
@@ -37,10 +40,6 @@ export default function DeckListPage() {
         ) : (
           <p>No decks so far...</p>
         )}
-      </section>
-      <section>
-        <h2>Create a Deck</h2>
-        <DeckForm setToggleRerender={setToggleRerender} />
       </section>
     </main>
   );
