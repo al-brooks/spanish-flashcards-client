@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
 
 export default function DeckListPage() {
@@ -32,9 +33,11 @@ export default function DeckListPage() {
         {decks.length > 0 ? (
           decks.map(deck => {
             return (
-              <article key={deck.id}>
-                <h4>{deck.name}</h4>
-              </article>
+              <Link key={deck._id} to={`/flashcards/decks/${deck._id}`}>
+                <article>
+                  <h4>{deck.name}</h4>
+                </article>
+              </Link>
             );
           })
         ) : (
