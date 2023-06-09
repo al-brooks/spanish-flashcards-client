@@ -33,6 +33,7 @@ export default function DeckDetailPage() {
   };
 
   const loaded = () => {
+    console.log(deck.cards);
     return (
       <main>
         <h1>Deck Detail Page</h1>
@@ -45,12 +46,18 @@ export default function DeckDetailPage() {
             <section>
               <h3>Here are your flashcards:</h3>
               {deck.cards.length > 0 ? (
-                deck.cards.forEach(card => {
+                deck.cards.map(card => {
                   return (
                     <article key={card._id}>
                       <p>{card.content}</p>
                       <p>{card.translation}</p>
                       <p>{card.difficulty}</p>
+                      <form action="">
+                        <button>Edit</button>
+                      </form>
+                      <form action="">
+                        <button>Delete</button>
+                      </form>
                     </article>
                   );
                 })
