@@ -5,8 +5,6 @@ import { getUser } from "../../utilities/users-service";
 import NavBar from "../../components/NavBar/NavBar";
 import AuthPage from "../AuthPage/AuthPage";
 import SearchPage from "../SearchPage/SearchPage";
-import CreateFlashcardPage from "../CreateFlashcardPage/CreateFlashcardPage";
-import FlashcardListPage from "../FlashcardListPage/FlashcardListPage";
 import DeckListPage from "../DeckListPage/DeckListPage";
 
 function App() {
@@ -19,9 +17,7 @@ function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/translate" element={<SearchPage />} />
-            <Route path="/flashcards" element={<FlashcardListPage />} />
-            <Route path="/flashcards/new" element={<CreateFlashcardPage />} />
-            <Route path="/flashcards/decks" element={<DeckListPage />} />
+            <Route path="/flashcards" element={<DeckListPage />} />
           </Routes>
         </>
       ) : (

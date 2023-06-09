@@ -12,8 +12,6 @@ export default function NavBar({ user, setUser }) {
       <Link to={"/"}>Home</Link>
       <Link to={"/translate"}>Translate</Link>
       <Link to={"/flashcards"}>View Flashcards</Link>
-      <Link to={"/flashcards/decks"}>View Flashcard Decks</Link>
-      <Link to={"/flashcards/new"}>Create Flashcards</Link>
       <Link to="" onClick={handleLogOut}>
         Log Out
       </Link>
