@@ -26,7 +26,7 @@ export default function DeckListPage() {
     <main>
       <h1>Here are your flashcard decks!</h1>
       <section>
-        <button>Create New Deck</button>
+        <Link to={"/flashcards/decks/create"}>Create New Deck</Link>
       </section>
       <section>
         <h2>Deck List</h2>

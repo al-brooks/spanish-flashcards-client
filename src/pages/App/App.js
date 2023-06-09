@@ -7,6 +7,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import SearchPage from "../SearchPage/SearchPage";
 import DeckListPage from "../DeckListPage/DeckListPage";
 import DeckDetailPage from "../DeckDetailPage/DeckDetailPage";
+import CreateDeckPage from "../CreateDeckPage/CreateDeckPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -19,6 +20,10 @@ function App() {
           <Routes>
             <Route path="/translate" element={<SearchPage />} />
             <Route path="/flashcards" element={<DeckListPage />} />
+            <Route
+              path="/flashcards/decks/create"
+              element={<DeckDetailPage />}
+            />
             <Route path="/flashcards/decks/:id" element={<DeckDetailPage />} />
           </Routes>
         </>
