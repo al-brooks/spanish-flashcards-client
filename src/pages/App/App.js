@@ -8,6 +8,8 @@ import SearchPage from "../SearchPage/SearchPage";
 import DeckListPage from "../DeckListPage/DeckListPage";
 import DeckDetailPage from "../DeckDetailPage/DeckDetailPage";
 import CreateDeckPage from "../CreateDeckPage/CreateDeckPage";
+import EditPage from "../EditPage/EditPage";
+import DeleteConfirmPage from "../DeleteConfirmPage/DeleteConfirmPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -25,6 +27,19 @@ function App() {
               element={<CreateDeckPage />}
             />
             <Route path="/flashcards/decks/:id" element={<DeckDetailPage />} />
+            <Route path="/flashcards/decks/:d_id/edit" element={<EditPage />} />
+            <Route
+              path="/flashcards/decks/:d_id/cards/:c_id/edit"
+              element={<EditPage />}
+            />
+            <Route
+              path="/flashcards/decks/:d_id/delete"
+              element={<DeleteConfirmPage />}
+            />
+            <Route
+              path="/flashcards/decks/:d_id/cards/:c_id/delete"
+              element={<DeleteConfirmPage />}
+            />
           </Routes>
         </>
       ) : (

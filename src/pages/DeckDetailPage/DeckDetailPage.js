@@ -35,8 +35,8 @@ export default function DeckDetailPage() {
     return (
       <main>
         <h1>Deck Detail Page</h1>
-        <button>Edit Deck</button>
-        <button>Delete Deck</button>
+        <Link to={"/edit"}>Edit Deck</Link>
+        <Link to={"/delete"}>Delete Deck</Link>
         <TranslateForm />
         <section>
           <article>
@@ -50,16 +50,8 @@ export default function DeckDetailPage() {
                       <p>{card.content}</p>
                       <p>{card.translation}</p>
                       <p>{card.difficulty}</p>
-                      <Link
-                        to={`flashcards/decks/${deck._id}/cards/${card._d}/edit`}
-                      >
-                        Edit
-                      </Link>
-                      <Link
-                        to={`flashcards/decks/${deck._id}/cards/${card._d}/delete`}
-                      >
-                        Delete
-                      </Link>
+                      <Link to={`cards/${card._id}/edit`}>Edit</Link>
+                      <Link to={`cards/${card._id}/delete`}>Delete</Link>
                     </article>
                   );
                 })
