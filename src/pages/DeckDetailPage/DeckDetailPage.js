@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
+import TranslateForm from "../../components/TranslateForm/TranslateForm";
 
 export default function DeckDetailPage() {
   const [deck, setDeck] = useState(null);
@@ -29,6 +30,7 @@ export default function DeckDetailPage() {
       <h1>Deck Detail Page</h1>
       <button>Edit Deck</button>
       <button>Delete Deck</button>
+      <TranslateForm />
       <section>
         <article>
           {/* <h2>{deck.name}</h2> */}
