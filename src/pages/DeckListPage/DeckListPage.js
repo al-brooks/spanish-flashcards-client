@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
 
 export default function DeckListPage() {
-  const [toggleRerender, setToggleRerender] = useState(false);
   const [decks, setDecks] = useState([]);
   const [error, setError] = useState("");
 
@@ -11,12 +10,11 @@ export default function DeckListPage() {
     try {
       const response = await flashcardsService.getAllDecks();
       setDecks(response);
-      setToggleRerender(false);
       setError("");
     } catch {
       setError("Oh no! Something went wrong...");
     }
-  }, [toggleRerender]);
+  }, []);
 
   useEffect(() => {
     fetchDecks();
@@ -44,6 +42,7 @@ export default function DeckListPage() {
           <p>No decks so far...</p>
         )}
       </section>
+      <p className="error-msg">&nbsp;{error}</p>
     </main>
   );
 }

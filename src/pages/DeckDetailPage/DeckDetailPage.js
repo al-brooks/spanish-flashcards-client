@@ -7,11 +7,11 @@ export default function DeckDetailPage() {
   const [deck, setDeck] = useState(null);
   const [error, setError] = useState("");
   const { id } = useParams();
-  console.log(deck);
 
   const fetchDeck = useCallback(async () => {
     try {
       const response = await flashcardsService.getDeck(id);
+      console.log(response);
       if (response) {
         setDeck(response);
         setError("");
@@ -25,23 +25,44 @@ export default function DeckDetailPage() {
     fetchDeck();
   }, [fetchDeck]);
 
-  return (
-    <main>
-      <h1>Deck Detail Page</h1>
-      <button>Edit Deck</button>
-      <button>Delete Deck</button>
-      <TranslateForm />
-      <section>
-        <article>
-          {/* <h2>{deck.name}</h2> */}
-          <p>this is your deck</p>
-          <section>
-            <p>card</p>
-            <button>edit</button>
-            <button>delete</button>
-          </section>
-        </article>
-      </section>
-    </main>
-  );
+  const loading = () => {
+    if (error) {
+      return <h2>{error}</h2>;
+    }
+    return <h2>Loading Info...</h2>;
+  };
+
+  const loaded = () => {
+    return (
+      <main>
+        <h1>Deck Detail Page</h1>
+        <button>Edit Deck</button>
+        <button>Delete Deck</button>
+        <TranslateForm />
+        <section>
+          <article>
+            <h2>{deck.name}</h2>
+            <section>
+              <h3>Here are your flashcards:</h3>
+              {deck.cards.length > 0 ? (
+                deck.cards.forEach(card => {
+                  return (
+                    <article key={card._id}>
+                      <p>{card.content}</p>
+                      <p>{card.translation}</p>
+                      <p>{card.difficulty}</p>
+                    </article>
+                  );
+                })
+              ) : (
+                <p>There are no cards yet...</p>
+              )}
+            </section>
+          </article>
+        </section>
+        <p className="error-msg">&nbsp;{error}</p>
+      </main>
+    );
+  };
+  return <>{deck ? loaded() : loading()}</>;
 }

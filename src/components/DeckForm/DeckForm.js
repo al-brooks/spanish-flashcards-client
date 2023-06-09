@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate, createSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
 
 export default function DeckForm() {
