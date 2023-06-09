@@ -9,3 +9,8 @@ export async function getAllDecks() {
   const decks = await flashcardsAPI.getAllDecks();
   return decks;
 }
+
+export async function getDeck(id) {
+  const deck = await flashcardsAPI.getDeck(id);
+  return deck;
+}
