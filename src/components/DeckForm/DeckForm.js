@@ -1,12 +1,14 @@
 import { useState } from "react";
+import { Link, useNavigate, createSearchParams } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
 
-export default function DeckForm({ setToggleRerender }) {
+export default function DeckForm() {
   const [deck, setDeck] = useState({
     name: ""
   });
 
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = evt => {
     setDeck({
@@ -20,7 +22,7 @@ export default function DeckForm({ setToggleRerender }) {
     evt.preventDefault();
     try {
       const response = await flashcardsService.createDeck(deck);
-      if (response) setToggleRerender(true);
+      if (response) navigate({ pathname: `/flashcards/decks/${response._id}` });
     } catch {
       setError("Deck couldn't be created - Try again");
     }
