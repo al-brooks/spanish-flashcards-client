@@ -6,11 +6,11 @@ import TranslateForm from "../../components/TranslateForm/TranslateForm";
 export default function DeckDetailPage() {
   const [deck, setDeck] = useState(null);
   const [error, setError] = useState("");
-  const { id } = useParams();
+  const { d_id } = useParams();
 
   const fetchDeck = useCallback(async () => {
     try {
-      const response = await flashcardsService.getDeck(id);
+      const response = await flashcardsService.getDeck(d_id);
       if (response) {
         setDeck(response);
         setError("");
@@ -18,7 +18,7 @@ export default function DeckDetailPage() {
     } catch {
       setError("Oh no! Something went wrong...");
     }
-  }, [id]);
+  }, [d_id]);
 
   useEffect(() => {
     fetchDeck();

@@ -26,7 +26,10 @@ function App() {
               path="/flashcards/decks/create"
               element={<CreateDeckPage />}
             />
-            <Route path="/flashcards/decks/:id" element={<DeckDetailPage />} />
+            <Route
+              path="/flashcards/decks/:d_id"
+              element={<DeckDetailPage />}
+            />
             <Route path="/flashcards/decks/:d_id/edit" element={<EditPage />} />
             <Route
               path="/flashcards/decks/:d_id/cards/:c_id/edit"
