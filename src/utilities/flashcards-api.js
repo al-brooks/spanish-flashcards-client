@@ -16,3 +16,11 @@ export function getDeck(id) {
 export function updateDeck(id, data) {
   return sendRequest(`${DECKS_URL}/${id}`, "PUT", data);
 }
+
+export function deleteDeck(id) {
+  return sendRequest(`${DECKS_URL}/${id}`, "DELETE");
+}
+
+export function deleteCard(deckId, cardId) {
+  return sendRequest(`${DECKS_URL}/${deckId}/cards/${cardId}`, "DELETE");
+}

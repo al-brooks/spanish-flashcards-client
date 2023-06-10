@@ -19,3 +19,13 @@ export async function updateDeck(id, data) {
   const deck = await flashcardsAPI.updateDeck(id, data);
   return deck;
 }
+
+export async function deleteDeck(id) {
+  const response = await flashcardsAPI.deleteDeck(id);
+  return response;
+}
+
+export async function deleteCard(deckId, cardId) {
+  const response = await flashcardsAPI.deleteCard(deckId, cardId);
+  return response;
+}
