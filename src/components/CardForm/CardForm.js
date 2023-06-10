@@ -6,12 +6,12 @@ export default function CardForm() {
   const [card, setCard] = useState({
     content: "",
     translation: "",
-    difficulty: ""
+    difficulty: "New"
   });
 
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { d_id } = useParams();
+  const { d_id: deckId } = useParams();
 
   const handleChange = evt => {
     setCard({
@@ -24,8 +24,8 @@ export default function CardForm() {
   const handleSubmit = async evt => {
     evt.preventDefault();
     try {
-      const response = await flashcardsService.createCard(card);
-      if (response) navigate({ pathname: `/flashcards/decks/${d_id._id}` });
+      const response = await flashcardsService.createCard(deckId, card);
+      if (response) navigate({ pathname: `/flashcards/decks/${deckId}` });
     } catch {
       setError("Card couldn't be created - Try again");
     }
@@ -52,7 +52,11 @@ export default function CardForm() {
           required
         />
         <label>Difficulty</label>
-        <select name="difficulty">
+        <select
+          value={card.difficulty}
+          name="difficulty"
+          onChange={handleChange}
+        >
           <option value="New">New</option>
           <option value="Tough">Tough</option>
           <option value="Okay">Okay</option>

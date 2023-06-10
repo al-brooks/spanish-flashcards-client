@@ -44,6 +44,7 @@ export default function DeckDetailPage() {
           Edit Deck
         </Link>
         <Link to={"delete"}>Delete Deck</Link>
+        <Link to={"cards/create"}>Create a Custom Card</Link>
         <TranslateForm />
         <section>
           <article>
