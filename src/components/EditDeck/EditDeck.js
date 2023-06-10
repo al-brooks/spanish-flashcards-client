@@ -1,15 +1,14 @@
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
 
-export default function EditDeck({ name }) {
+export default function EditDeck({ name, id }) {
   const [deck, setDeck] = useState({
     name: ""
   });
 
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleChange = evt => {
     setDeck({
@@ -22,7 +21,7 @@ export default function EditDeck({ name }) {
   const handleSubmit = async evt => {
     evt.preventDefault();
     try {
-      const response = await flashcardsService.createDeck(deck);
+      const response = await flashcardsService.updateDeck(id, deck);
       if (response) navigate({ pathname: `/flashcards/decks/${response._id}` });
     } catch {
       setError("Deck couldn't be created - Try again");
@@ -44,6 +43,7 @@ export default function EditDeck({ name }) {
         />
         <button type="submit">Create</button>
       </form>
+      <Link to={`/flashcards/decks/${id}`}>Cancel</Link>
       <p className="error-msg">&nbsp;{error}</p>
     </>
   );

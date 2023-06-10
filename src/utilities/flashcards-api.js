@@ -12,3 +12,7 @@ export function getAllDecks() {
 export function getDeck(id) {
   return sendRequest(`${DECKS_URL}/${id}`);
 }
+
+export function updateDeck(id, data) {
+  return sendRequest(`${DECKS_URL}/${id}`, "PUT", data);
+}

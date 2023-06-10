@@ -14,3 +14,8 @@ export async function getDeck(id) {
   const deck = await flashcardsAPI.getDeck(id);
   return deck;
 }
+
+export async function updateDeck(id, data) {
+  const deck = await flashcardsAPI.updateDeck(id, data);
+  return deck;
+}

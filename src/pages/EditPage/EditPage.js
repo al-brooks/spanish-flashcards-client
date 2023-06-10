@@ -13,7 +13,7 @@ export default function EditPage() {
     <main>
       <h1>Edit:</h1>
       {!cardId ? (
-        <EditDeck name={location.state.name} />
+        <EditDeck id={deckId} name={location.state.name} />
       ) : (
         <p>Edit Card Form</p>
       )}
