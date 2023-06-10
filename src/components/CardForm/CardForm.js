@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
 
 export default function CardForm() {
@@ -11,6 +11,7 @@ export default function CardForm() {
 
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { d_id } = useParams();
 
   const handleChange = evt => {
     setCard({
@@ -24,7 +25,7 @@ export default function CardForm() {
     evt.preventDefault();
     try {
       const response = await flashcardsService.createCard(card);
-      if (response) navigate({ pathname: `/flashcards/decks/${response._id}` });
+      if (response) navigate({ pathname: `/flashcards/decks/${d_id._id}` });
     } catch {
       setError("Card couldn't be created - Try again");
     }
