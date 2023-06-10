@@ -7,7 +7,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import SearchPage from "../SearchPage/SearchPage";
 import DeckListPage from "../DeckListPage/DeckListPage";
 import DeckDetailPage from "../DeckDetailPage/DeckDetailPage";
-import CreateDeckPage from "../CreateDeckPage/CreateDeckPage";
+import CreatePage from "../CreatePage/CreatePage";
 import EditPage from "../EditPage/EditPage";
 import DeleteConfirmPage from "../DeleteConfirmPage/DeleteConfirmPage";
 
@@ -22,9 +22,10 @@ function App() {
           <Routes>
             <Route path="/translate" element={<SearchPage />} />
             <Route path="/flashcards" element={<DeckListPage />} />
+            <Route path="/flashcards/decks/create" element={<CreatePage />} />
             <Route
-              path="/flashcards/decks/create"
-              element={<CreateDeckPage />}
+              path="/flashcards/decks/:d_id/cards/create"
+              element={<CreatePage />}
             />
             <Route
               path="/flashcards/decks/:d_id"
