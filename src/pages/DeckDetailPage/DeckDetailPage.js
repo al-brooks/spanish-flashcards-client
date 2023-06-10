@@ -35,7 +35,14 @@ export default function DeckDetailPage() {
     return (
       <main>
         <h1>Deck Detail Page</h1>
-        <Link to={`edit`}>Edit Deck</Link>
+        <Link
+          to={`edit`}
+          state={{
+            name: deck.name
+          }}
+        >
+          Edit Deck
+        </Link>
         <Link to={"delete"}>Delete Deck</Link>
         <TranslateForm />
         <section>
