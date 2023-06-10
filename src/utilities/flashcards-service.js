@@ -25,6 +25,16 @@ export async function deleteDeck(id) {
   return response;
 }
 
+export async function createCard(deckId, data) {
+  const card = await flashcardsAPI.createCard(deckId, data);
+  return card;
+}
+
+export async function updateCard(deckId, cardId, data) {
+  const card = await flashcardsAPI.updateCard(deckId, cardId, data);
+  return card;
+}
+
 export async function deleteCard(deckId, cardId) {
   const response = await flashcardsAPI.deleteCard(deckId, cardId);
   return response;
