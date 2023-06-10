@@ -5,7 +5,6 @@ export default function TranslateForm({ setTranslations }) {
   const [search, setSearch] = useState({
     searchTerm: ""
   });
-
   const [error, setError] = useState("");
 
   const handleSubmit = async evt => {
