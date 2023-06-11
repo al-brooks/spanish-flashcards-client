@@ -22,37 +22,42 @@ function App() {
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/translate" element={<SearchPage />} />
-            <Route path="/flashcards" element={<DeckListPage />} />
-            <Route path="/flashcards/decks/create" element={<CreatePage />} />
-            <Route
-              path="/flashcards/decks/:d_id/cards/create"
-              element={<CreatePage />}
-            />
-            <Route
-              path="/flashcards/decks/:d_id"
-              element={<DeckDetailPage />}
-            />
-            <Route path="/flashcards/decks/:d_id/edit" element={<EditPage />} />
-            <Route
-              path="/flashcards/decks/:d_id/cards/:c_id"
-              element={<CardDetailPage />}
-            />
-            <Route
-              path="/flashcards/decks/:d_id/cards/:c_id/edit"
-              element={<EditPage />}
-            />
-            <Route
-              path="/flashcards/decks/:d_id/delete"
-              element={<DeleteConfirmPage />}
-            />
-            <Route
-              path="/flashcards/decks/:d_id/cards/:c_id/delete"
-              element={<DeleteConfirmPage />}
-            />
-          </Routes>
+          <main>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/translate" element={<SearchPage />} />
+              <Route path="/flashcards" element={<DeckListPage />} />
+              <Route path="/flashcards/decks/create" element={<CreatePage />} />
+              <Route
+                path="/flashcards/decks/:d_id/cards/create"
+                element={<CreatePage />}
+              />
+              <Route
+                path="/flashcards/decks/:d_id"
+                element={<DeckDetailPage />}
+              />
+              <Route
+                path="/flashcards/decks/:d_id/edit"
+                element={<EditPage />}
+              />
+              <Route
+                path="/flashcards/decks/:d_id/cards/:c_id"
+                element={<CardDetailPage />}
+              />
+              <Route
+                path="/flashcards/decks/:d_id/cards/:c_id/edit"
+                element={<EditPage />}
+              />
+              <Route
+                path="/flashcards/decks/:d_id/delete"
+                element={<DeleteConfirmPage />}
+              />
+              <Route
+                path="/flashcards/decks/:d_id/cards/:c_id/delete"
+                element={<DeleteConfirmPage />}
+              />
+            </Routes>
+          </main>
         </>
       ) : (
         <main>
