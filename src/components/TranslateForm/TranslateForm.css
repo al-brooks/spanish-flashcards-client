@@ -1,3 +1,10 @@
+.TranslateForm {
+  margin: 0;
+}
+.TranslateForm form {
+  border-bottom: 2px solid var(--color-three);
+}
+
 .TranslateForm form input {
   width: 60%;
   height: 2rem;

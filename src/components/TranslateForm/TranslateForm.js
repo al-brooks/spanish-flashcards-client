@@ -53,7 +53,7 @@ export default function TranslateForm({ setTranslations }) {
           Search
         </button>
       </form>
-      <p className="error-msg">&nbsp;{error}</p>
+      {error ? <p className="error-msg">&nbsp;{error}</p> : <></>}
     </section>
   );
 }

@@ -36,16 +36,16 @@ export default function Search({ setToggleRender }) {
     }
   };
 
-  const loading = () => {
+  const loadingTranslations = () => {
     if (error) {
       return <h2>{error}</h2>;
     }
     return <h2>Loading...</h2>;
   };
 
-  const loaded = () => {
+  const loadedTranslations = () => {
     return (
-      <section>
+      <section className="flex flex-col card-wrapper">
         {translations.terms.map((result, idx) => {
           let id = result.meta.id;
           let headWord = id.split(":")[0];
@@ -59,7 +59,7 @@ export default function Search({ setToggleRender }) {
             return abridgedDefs.map((def, idx) => {
               const word = def.trim();
               return (
-                <article key={id + idx}>
+                <article className="card" key={id + idx}>
                   <h3>{headWord}</h3>
                   <p>{wordClass}</p>
                   <p>{word}</p>
@@ -83,7 +83,7 @@ export default function Search({ setToggleRender }) {
     <section className="Search">
       <h2>Search a word below:</h2>
       <TranslateForm setTranslations={setTranslations} />
-      {translations ? loaded() : loading()}
+      {translations ? loadedTranslations() : loadingTranslations()}
     </section>
   );
 }
