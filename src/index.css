@@ -60,3 +60,9 @@ a:hover {
 .flex-space-be {
   justify-content: space-between;
 }
+
+.mw-logo {
+  margin: 1px;
+  width: 50px;
+  height: 50px;
+}
