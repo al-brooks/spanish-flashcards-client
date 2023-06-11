@@ -1,14 +1,8 @@
 import { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
 
-export default function EditCard({
-  deckId,
-  cardId,
-  content,
-  translation,
-  difficulty
-}) {
+export default function EditCard({ deckId, cardId, content, translation }) {
   const [card, setCard] = useState({
     content: "",
     translation: "",
