@@ -23,11 +23,24 @@
 }
 
 .deck-card {
-  border: 2px solid var(--color-three);
   border-radius: 5px;
   width: 15rem;
 }
 
-.deck-card .color-word {
+.deck-card-even {
+  border: 2px solid var(--color-three-dark);
+  background-color: var(--color-two-light);
+}
+
+.deck-card-odd {
+  border: 2px solid var(--color-five-dark);
+  background-color: var(--color-four-light);
+}
+
+.deck-card-even .color-word {
   color: var(--color-three-dark);
+}
+
+.deck-card-odd .color-word {
+  color: var(--color-five-dark);
 }

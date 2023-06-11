@@ -34,20 +34,30 @@ export default function DeckListPage() {
         </div>
         <Link to={"/flashcards/decks/create"}>&#43; Create Deck</Link>
       </section>
+      <h3>My Decks:</h3>
       <section>
-        <h3>My Decks:</h3>
         {decks.length > 0 ? (
-          decks.map(deck => {
-            return (
-              <Link key={deck._id} to={`/flashcards/decks/${deck._id}`}>
-                <article className="deck-card">
+          decks.map((deck, idx) => {
+            return idx % 2 === 0 ? (
+              <article key={deck._id} className="deck-card deck-card-even">
+                <Link to={`/flashcards/decks/${deck._id}`}>
                   <h3>{deck.name}</h3>
                   <p>
                     <span className="color-word">{deck.cards.length}</span>
                     {deck.cards.length === 1 ? " Card" : " Cards"}
                   </p>
-                </article>
-              </Link>
+                </Link>
+              </article>
+            ) : (
+              <article key={deck._id} className="deck-card deck-card-odd">
+                <Link to={`/flashcards/decks/${deck._id}`}>
+                  <h3>{deck.name}</h3>
+                  <p>
+                    <span className="color-word">{deck.cards.length}</span>
+                    {deck.cards.length === 1 ? " Card" : " Cards"}
+                  </p>
+                </Link>
+              </article>
             );
           })
         ) : (
