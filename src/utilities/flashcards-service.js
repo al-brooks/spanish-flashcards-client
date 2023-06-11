@@ -31,6 +31,11 @@ export async function createCard(deckId, data) {
   return card;
 }
 
+export async function showCard(deckId, cardId) {
+  const card = await flashcardsAPI.showCard(deckId, cardId);
+  return card;
+}
+
 export async function updateCard(deckId, cardId, data) {
   const card = await flashcardsAPI.updateCard(deckId, cardId, data);
   return card;
