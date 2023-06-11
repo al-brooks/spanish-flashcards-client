@@ -104,8 +104,17 @@ a:hover {
 
 .card {
   border: 1px solid black;
-  width: 80%;
+  width: 50%;
   margin-bottom: 2vmin;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+
+.card-grammar {
+  font-size: 1rem;
 }
 
 .color-span {

@@ -60,9 +60,11 @@ export default function Search({ setToggleRender }) {
               const word = def.trim();
               return (
                 <article className="card" key={id + idx}>
-                  <h3>{headWord}</h3>
-                  <p>{wordClass}</p>
-                  <p>{word}</p>
+                  <p className="card-title">
+                    {headWord}{" "}
+                    <span className="color-span card-grammar">{wordClass}</span>
+                  </p>
+                  <p className="card-translation">{word}</p>
                   {deckId ? (
                     <button onClick={() => handleRequest(headWord, word)}>
                       +
