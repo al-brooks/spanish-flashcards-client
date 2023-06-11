@@ -1,3 +1,4 @@
+import "./DeckListPage.css";
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
@@ -22,8 +23,19 @@ export default function DeckListPage() {
 
   return (
     <>
-      <section className="flex ">
-        <h2>Flashcard Decks</h2>
+      <section className="deck-list-header">
+        <div>
+          <h2>Flashcard Decks</h2>
+          {decks.length === 1 ? (
+            <p>
+              <span className="color-word">1</span> Deck
+            </p>
+          ) : (
+            <p>
+              <span className="color-word">{decks.length}</span> Decks
+            </p>
+          )}
+        </div>
         <Link to={"/flashcards/decks/create"}>&#43; Create Deck</Link>
       </section>
       <section>

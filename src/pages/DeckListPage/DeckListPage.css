@@ -1,0 +1,23 @@
+.deck-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.deck-list-header h2 {
+  margin: 0;
+  color: var(--color-one-dark);
+}
+
+.deck-list-header a {
+  border: 2px solid var(--color-one-dark);
+  border-radius: 5px;
+  padding: 4px 7px;
+  color: var(--color-one-dark);
+}
+
+.deck-list-header a:hover {
+  background-color: var(--color-one-dark);
+  color: white;
+  border: none;
+}

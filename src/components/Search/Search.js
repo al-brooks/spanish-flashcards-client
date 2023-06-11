@@ -62,7 +62,7 @@ export default function Search({ setToggleRender }) {
                 <article className="card flex flex-col" key={id + idx}>
                   <p className="card-title">
                     {headWord}{" "}
-                    <span className="color-span card-grammar">{wordClass}</span>
+                    <span className="color-word card-grammar">{wordClass}</span>
                   </p>
 
                   <div className="flex flex-align-end">
