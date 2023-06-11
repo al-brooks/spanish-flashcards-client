@@ -1,7 +1,7 @@
 .deck-detail-header {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .deck-detail-header h2 {

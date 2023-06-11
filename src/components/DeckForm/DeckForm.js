@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
 
 export default function DeckForm() {
@@ -29,20 +29,30 @@ export default function DeckForm() {
   };
 
   return (
-    <>
-      <h3>Deck Form</h3>
-      <form autoComplete="off" onSubmit={handleSubmit}>
-        <label>Name</label>
+    <section className="flex flex-col">
+      <h2>Create Your Deck</h2>
+      <form
+        className="form form-deck"
+        autoComplete="off"
+        onSubmit={handleSubmit}
+      >
+        <label>Name:</label>
         <input
           type="text"
           name="name"
           value={deck.name}
           onChange={handleChange}
+          placeholder="Enter Deck Name"
           required
         />
-        <button type="submit">Create</button>
+        <button className="btn btn-color-confirm" type="submit">
+          Create
+        </button>
       </form>
+      <Link className="cancel-link" to={`/flashcards`}>
+        Cancel
+      </Link>
       <p className="error-msg">&nbsp;{error}</p>
-    </>
+    </section>
   );
 }
