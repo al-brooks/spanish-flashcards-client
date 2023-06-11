@@ -23,7 +23,7 @@ export default function DeleteConfirmPage() {
     evt.preventDefault();
     try {
       const response = await flashcardsService.deleteCard(deckId, cardId);
-      if (response) navigate({ pathname: `/flashcards` });
+      if (response) navigate({ pathname: `/flashcards/decks/${deckId}` });
     } catch {
       setError("Something went wrong - Try again");
     }
