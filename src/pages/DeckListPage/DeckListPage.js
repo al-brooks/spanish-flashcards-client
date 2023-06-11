@@ -35,7 +35,7 @@ export default function DeckListPage() {
         <Link to={"/flashcards/decks/create"}>&#43; Create Deck</Link>
       </section>
       <h3>My Decks:</h3>
-      <section>
+      <section className="decks-wrapper">
         {decks.length > 0 ? (
           decks.map((deck, idx) => {
             return idx % 2 === 0 ? (
