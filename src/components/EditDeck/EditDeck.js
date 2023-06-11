@@ -29,9 +29,15 @@ export default function EditDeck({ name, id }) {
   };
 
   return (
-    <>
-      <h3>Deck Form</h3>
-      <form autoComplete="off" onSubmit={handleSubmit}>
+    <section className="flex flex-col">
+      <h2>
+        Edit <span className="color-word">{name}</span>
+      </h2>
+      <form
+        className="form form-deck"
+        autoComplete="off"
+        onSubmit={handleSubmit}
+      >
         <label>Name</label>
         <input
           type="text"
@@ -41,10 +47,14 @@ export default function EditDeck({ name, id }) {
           placeholder={name}
           required
         />
-        <button type="submit">Create</button>
+        <button className="btn btn-color-confirm" type="submit">
+          Create
+        </button>
       </form>
-      <Link to={`/flashcards/decks/${id}`}>Cancel</Link>
+      <Link className="cancel-link" to={`/flashcards/decks/${id}`}>
+        Cancel
+      </Link>
       <p className="error-msg">&nbsp;{error}</p>
-    </>
+    </section>
   );
 }

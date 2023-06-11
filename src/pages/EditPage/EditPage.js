@@ -11,7 +11,6 @@ export default function EditPage() {
 
   return (
     <>
-      <h1>Edit:</h1>
       {!cardId ? (
         <EditDeck id={deckId} name={location.state.name} />
       ) : (
