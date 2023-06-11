@@ -22,12 +22,11 @@ export default function DeckListPage() {
 
   return (
     <>
-      <h1>Here are your flashcard decks!</h1>
-      <section>
-        <Link to={"/flashcards/decks/create"}>Create New Deck</Link>
+      <section className="flex ">
+        <h2>Flashcard Decks</h2>
+        <Link to={"/flashcards/decks/create"}>&#43; Create Deck</Link>
       </section>
       <section>
-        <h2>Deck List</h2>
         {decks.length > 0 ? (
           decks.map(deck => {
             return (
