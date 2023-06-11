@@ -14,7 +14,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 0, auto;
   font-family: "Poppins", sans-serif;
   background-color: var(--color-six);
 }
@@ -45,10 +45,18 @@ a:hover {
   background-color: var(--color-four);
 }
 
-.flex-row {
+.flex {
   display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .flex-even {
   justify-content: space-evenly;
+}
+
+.flex-space-be {
+  justify-content: space-between;
 }

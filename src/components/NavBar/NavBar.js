@@ -8,7 +8,7 @@ export default function NavBar({ user, setUser }) {
   };
 
   return (
-    <nav className="flex-row flex-even">
+    <nav className="flex flex-even">
       <Link to={"/"}>Home</Link>
       <Link to={"/translate"}>Translate</Link>
       <Link to={"/flashcards"}>Flashcards</Link>

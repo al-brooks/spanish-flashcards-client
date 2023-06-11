@@ -18,7 +18,7 @@ function App() {
   const [user, setUser] = useState(getUser());
 
   return (
-    <div className="App">
+    <div className="App flex flex-col flex-space-be">
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
