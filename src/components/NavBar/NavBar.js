@@ -8,7 +8,7 @@ export default function NavBar({ user, setUser }) {
   };
 
   return (
-    <nav style={{ display: "flex", justifyContent: "space-evenly" }}>
+    <nav className="flex-row flex-even">
       <Link to={"/"}>Home</Link>
       <Link to={"/translate"}>Translate</Link>
       <Link to={"/flashcards"}>Flashcards</Link>

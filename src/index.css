@@ -44,3 +44,11 @@ a:hover {
   cursor: pointer;
   background-color: var(--color-four);
 }
+
+.flex-row {
+  display: flex;
+}
+
+.flex-even {
+  justify-content: space-evenly;
+}
