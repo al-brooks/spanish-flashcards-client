@@ -81,7 +81,7 @@ export default function Search({ setToggleRender }) {
 
   return (
     <section className="Search">
-      <h2>Search a word below:</h2>
+      <h2>Search For Translations Below:</h2>
       <TranslateForm setTranslations={setTranslations} />
       {translations ? loadedTranslations() : loadingTranslations()}
     </section>
