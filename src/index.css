@@ -1,9 +1,12 @@
 :root {
   --color-one: #cdb4db;
+  --color-one-dark: #9764b4;
   --color-two: #ffc8dd;
   --color-three: #ffafcc;
+  --color-three-dark: #ff1a6e;
   --color-four: #bde0fe;
   --color-five: #a2d2ff;
+  --color-five-dark: #1a90ff;
   --color-six: #f6fff8;
 }
 
@@ -14,9 +17,10 @@
 }
 
 body {
-  margin: 0, auto;
+  margin: 0;
+  padding: 0;
   font-family: "Poppins", sans-serif;
-  background-color: var(--color-six);
+  /* background-color: var(--color-six); */
 }
 
 main {
@@ -27,7 +31,19 @@ main {
 }
 
 nav {
+  height: 8vmin;
   width: 100%;
+  font-size: 3.25vmin;
+  color: var(--color-five-dark);
+}
+
+footer {
+  font-size: 0.8rem;
+  margin-bottom: 2vmin;
+}
+
+footer p {
+  margin: 0;
 }
 
 a {
@@ -37,7 +53,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-one);
+  color: var(--color-three-dark);
 }
 
 .btn {
@@ -72,6 +88,10 @@ a:hover {
   justify-content: space-between;
 }
 
+.flex-align-end {
+  align-items: flex-end;
+}
+
 .mw-logo {
   margin: 1px;
   width: 50px;
@@ -86,4 +106,12 @@ a:hover {
   border: 1px solid black;
   width: 80%;
   margin-bottom: 2vmin;
+}
+
+.color-span {
+  color: var(--color-one-dark);
+}
+
+.bg-color-one {
+  background-color: var(--color-one);
 }
