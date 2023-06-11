@@ -12,6 +12,11 @@ export default function TranslateForm({ setTranslations }) {
     evt.preventDefault();
     try {
       const result = await translateServices.getTranslation(search.searchTerm);
+
+      if (typeof result[0] !== "object") {
+        throw new Error();
+      }
+
       setTranslations({
         searchWord: search.searchTerm,
         terms: result

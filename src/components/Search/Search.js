@@ -1,3 +1,4 @@
+import "./Search.css";
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import TranslateForm from "../../components/TranslateForm/TranslateForm";
@@ -35,45 +36,54 @@ export default function Search({ setToggleRender }) {
     }
   };
 
+  const loading = () => {
+    if (error) {
+      return <h2>{error}</h2>;
+    }
+    return <h2>Loading...</h2>;
+  };
+
+  const loaded = () => {
+    return (
+      <section>
+        {translations.terms.map((result, idx) => {
+          let id = result.meta.id;
+          let headWord = id.split(":")[0];
+
+          if (translations.searchWord.includes(headWord)) {
+            let wordClass = result.fl;
+            let abridgedDefs = result.shortdef[0]
+              .replace(/\([^)]*\)/g, "")
+              .split(",");
+
+            return abridgedDefs.map((def, idx) => {
+              const word = def.trim();
+              return (
+                <article key={id + idx}>
+                  <h3>{headWord}</h3>
+                  <p>{wordClass}</p>
+                  <p>{word}</p>
+                  {deckId ? (
+                    <button onClick={() => handleRequest(headWord, word)}>
+                      +
+                    </button>
+                  ) : (
+                    <></>
+                  )}
+                </article>
+              );
+            });
+          }
+        })}
+      </section>
+    );
+  };
+
   return (
-    <section>
+    <section className="Search">
       <h2>Search a word below:</h2>
       <TranslateForm setTranslations={setTranslations} />
-      <section>
-        {translations.terms.length > 0 ? (
-          translations.terms.map((result, idx) => {
-            let id = result.meta.id;
-            let headWord = id.split(":")[0];
-
-            if (translations.searchWord.includes(headWord)) {
-              let wordClass = result.fl;
-              let abridgedDefs = result.shortdef[0]
-                .replace(/\([^)]*\)/g, "")
-                .split(",");
-
-              return abridgedDefs.map((def, idx) => {
-                const word = def.trim();
-                return (
-                  <article key={id + idx}>
-                    <h3>{headWord}</h3>
-                    <p>{wordClass}</p>
-                    <p>{word}</p>
-                    {deckId ? (
-                      <button onClick={() => handleRequest(headWord, word)}>
-                        +
-                      </button>
-                    ) : (
-                      <></>
-                    )}
-                  </article>
-                );
-              });
-            }
-          })
-        ) : (
-          <p>Nothing yet...</p>
-        )}
-      </section>
+      {translations ? loaded() : loading()}
     </section>
   );
 }
