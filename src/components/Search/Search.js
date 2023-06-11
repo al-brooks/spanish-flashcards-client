@@ -59,7 +59,7 @@ export default function Search({ setToggleRender }) {
             return abridgedDefs.map((def, idx) => {
               const word = def.trim();
               return (
-                <article className="card" key={id + idx}>
+                <article className="card flex flex-col" key={id + idx}>
                   <p className="card-title">
                     {headWord}{" "}
                     <span className="color-span card-grammar">{wordClass}</span>
