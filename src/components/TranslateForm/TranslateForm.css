@@ -4,8 +4,9 @@
 }
 
 .TranslateForm form input {
-  width: 60%;
+  width: 25rem;
   height: 2rem;
   padding-left: 2vmin;
   margin-right: 2vmin;
+  font-size: 1.1rem;
 }
