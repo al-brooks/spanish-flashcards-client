@@ -21,3 +21,13 @@
   color: white;
   border: none;
 }
+
+.deck-card {
+  border: 2px solid var(--color-three);
+  border-radius: 5px;
+  width: 15rem;
+}
+
+.deck-card .color-word {
+  color: var(--color-three-dark);
+}
