@@ -1,0 +1,44 @@
+.cards-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 4vmin;
+}
+
+.flash-card {
+  width: 25rem;
+  border-radius: 5px;
+}
+
+.flash-card:nth-child(even) {
+  border: 2px solid var(--color-one-dark);
+  background-color: var(--color-one-light);
+}
+
+.flash-card:nth-child(odd) {
+  border: 2px solid var(--color-five-dark);
+  background-color: var(--color-four-light);
+}
+
+.flash-card:nth-child(even) nav {
+  color: var(--color-one-dark);
+}
+
+.flash-card:nth-child(even) nav a:hover {
+  color: var(--color-three);
+}
+
+.flash-card:nth-child(odd) nav {
+  color: var(--color-three-dark);
+}
+
+.flash-card:nth-child(odd) nav a:hover {
+  color: var(--color-one);
+}
+
+.flash-nav {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1rem;
+}

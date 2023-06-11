@@ -1,4 +1,3 @@
-import "./Search.css";
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import TranslateForm from "../../components/TranslateForm/TranslateForm";

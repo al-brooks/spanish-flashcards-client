@@ -1,3 +1,4 @@
+import "./DeckDetailPage.css";
 import { useState, useEffect, useCallback } from "react";
 import { Link, useParams } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
@@ -51,27 +52,32 @@ export default function DeckDetailPage() {
         <section>
           <article>
             <h2>{deck.name}</h2>
-            <section>
-              <h3>Here are your flashcards:</h3>
+            <p>
+              {deck.cards.length}
+              {deck.cards.length === 1 ? " Card:" : " Cards:"}
+            </p>
+            <section className="cards-wrapper">
               {deck.cards.length > 0 ? (
                 deck.cards.map(card => {
                   return (
-                    <article key={card._id}>
-                      <p>{card.content}</p>
-                      <p>{card.translation}</p>
-                      <p>{card.difficulty}</p>
-                      <Link to={`cards/${card._id}`}>View</Link>
-                      <Link
-                        to={`cards/${card._id}/edit`}
-                        state={{
-                          content: card.content,
-                          translation: card.translation,
-                          difficulty: card.difficulty
-                        }}
-                      >
-                        Edit
-                      </Link>
-                      <Link to={`cards/${card._id}/delete`}>Delete</Link>
+                    <article className="flash-card" key={card._id}>
+                      <p className="flash-content">{card.content}</p>
+                      <p className="flash-translation">{card.translation}</p>
+                      <p className="flash-diff">{card.difficulty}</p>
+                      <nav className="flash-nav">
+                        <Link to={`cards/${card._id}`}>View</Link>
+                        <Link
+                          to={`cards/${card._id}/edit`}
+                          state={{
+                            content: card.content,
+                            translation: card.translation,
+                            difficulty: card.difficulty
+                          }}
+                        >
+                          Edit
+                        </Link>
+                        <Link to={`cards/${card._id}/delete`}>Delete</Link>
+                      </nav>
                     </article>
                   );
                 })
