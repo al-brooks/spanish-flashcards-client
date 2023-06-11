@@ -1,3 +1,4 @@
+import "./CardDetailPage.css";
 import { useState, useEffect, useCallback } from "react";
 import { Link, useParams } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
@@ -37,24 +38,29 @@ export default function CardDetailPage() {
 
   const loaded = () => {
     return (
-      <>
-        <h1>Card Detail Page</h1>
-        <Link to={`/flashcards/decks/${d_id}`}>Back to Deck</Link>
+      <section className="flex flex-col">
         {!toggleCard ? (
-          <article>
+          <article className="view-card front">
             <p>Front of Card</p>
             <p>{card.content}</p>
-            <button onClick={handleToggle}>Back</button>
+            <button className="btn btn-color-cancel" onClick={handleToggle}>
+              Back
+            </button>
           </article>
         ) : (
-          <article>
+          <article className="view-card back">
             <p>Back of Card</p>
             <p>{card.translation}</p>
-            <button onClick={handleToggle}>Front</button>
+            <button className="btn btn-color-confirm" onClick={handleToggle}>
+              Front
+            </button>
           </article>
         )}
+        <Link className="cancel-link" to={`/flashcards/decks/${d_id}`}>
+          Go Back to Deck
+        </Link>
         <p className="error-msg">&nbsp;{error}</p>
-      </>
+      </section>
     );
   };
   return <>{card ? loaded() : loading()}</>;

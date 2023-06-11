@@ -90,6 +90,7 @@ nav a:hover {
 
 .btn-color-cancel {
   background-color: var(--color-five-dark);
+  color: white;
 }
 
 .btn:hover {

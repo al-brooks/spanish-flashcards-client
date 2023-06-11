@@ -45,6 +45,7 @@ export default function CardForm() {
           name="content"
           value={card.content}
           onChange={handleChange}
+          placeholder="Enter Front of Card"
           required
         />
         <label>Back:</label>
@@ -53,6 +54,7 @@ export default function CardForm() {
           name="translation"
           value={card.translation}
           onChange={handleChange}
+          placeholder="Enter Back of Card"
           required
         />
         <label>Difficulty:</label>

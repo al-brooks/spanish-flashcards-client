@@ -1,0 +1,27 @@
+.view-card {
+  margin-top: 4vmin;
+  width: 18rem;
+  height: 12rem;
+  margin-bottom: 4vmin;
+  border-radius: 5px;
+}
+
+.front {
+  border: 2px solid var(--color-five-dark);
+  background-color: var(--color-four-light);
+}
+
+.back {
+  border: 2px solid var(--color-one-dark);
+  background-color: var(--color-one-light);
+}
+
+.view-card p {
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: lowercase;
+}
+
+.view-card button {
+  text-transform: lowercase;
+}
