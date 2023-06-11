@@ -1,3 +1,4 @@
+import "./TranslateForm.css";
 import { useState } from "react";
 import * as translateServices from "../../utilities/translate-service";
 
@@ -33,17 +34,19 @@ export default function TranslateForm({ setTranslations }) {
   };
 
   return (
-    <section>
-      <h2>Translate Words in English and Spanish</h2>
+    <section className="TranslateForm">
       <form onSubmit={handleSubmit} autoComplete="off">
         <input
           type="text"
           name="searchTerm"
           value={search.searchTerm}
           onChange={handleChange}
+          placeholder={"Translate Words in English and Spanish..."}
           required
         />
-        <button type="submit">Search</button>
+        <button className="btn" type="submit">
+          Search
+        </button>
       </form>
       <p className="error-msg">&nbsp;{error}</p>
     </section>
