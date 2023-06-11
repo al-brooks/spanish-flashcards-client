@@ -10,6 +10,7 @@ import DeckDetailPage from "../DeckDetailPage/DeckDetailPage";
 import CreatePage from "../CreatePage/CreatePage";
 import EditPage from "../EditPage/EditPage";
 import DeleteConfirmPage from "../DeleteConfirmPage/DeleteConfirmPage";
+import CardDetailPage from "../CardDetailPage/CardDetailPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -32,6 +33,10 @@ function App() {
               element={<DeckDetailPage />}
             />
             <Route path="/flashcards/decks/:d_id/edit" element={<EditPage />} />
+            <Route
+              path="/flashcards/decks/:d_id/cards/:c_id"
+              element={<CardDetailPage />}
+            />
             <Route
               path="/flashcards/decks/:d_id/cards/:c_id/edit"
               element={<EditPage />}

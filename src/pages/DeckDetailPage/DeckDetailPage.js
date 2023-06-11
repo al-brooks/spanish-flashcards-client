@@ -60,6 +60,7 @@ export default function DeckDetailPage() {
                       <p>{card.content}</p>
                       <p>{card.translation}</p>
                       <p>{card.difficulty}</p>
+                      <Link to={`cards/${card._id}`}>View</Link>
                       <Link
                         to={`cards/${card._id}/edit`}
                         state={{
