@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link, useParams } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
-import TranslateForm from "../../components/TranslateForm/TranslateForm";
+import Search from "../../components/Search/Search";
 
 export default function DeckDetailPage() {
   const [deck, setDeck] = useState(null);
@@ -45,7 +45,7 @@ export default function DeckDetailPage() {
         </Link>
         <Link to={"delete"}>Delete Deck</Link>
         <Link to={"cards/create"}>Create a Custom Card</Link>
-        <TranslateForm />
+        <Search />
         <section>
           <article>
             <h2>{deck.name}</h2>

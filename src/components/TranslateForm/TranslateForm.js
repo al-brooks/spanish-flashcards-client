@@ -15,6 +15,10 @@ export default function TranslateForm({ setTranslations }) {
         searchWord: search.searchTerm,
         terms: result
       });
+
+      setSearch({
+        searchTerm: ""
+      });
     } catch {
       setError("Oops, we weren't able to find this...");
     }
