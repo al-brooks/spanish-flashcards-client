@@ -62,6 +62,19 @@
   margin-top: 0;
 }
 
+.flash-content {
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: lowercase;
+  text-decoration: underline;
+}
+
+.flash-translation {
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-transform: lowercase;
+}
+
 #deck-detail-nav {
   display: flex;
   justify-content: flex-end;

@@ -68,7 +68,10 @@ export default function DeckDetailPage() {
                     <article className="flash-card" key={card._id}>
                       <p className="flash-content">{card.content}</p>
                       <p className="flash-translation">{card.translation}</p>
-                      <p className="flash-diff">{card.difficulty}</p>
+                      <p className="flash-diff">
+                        Difficulty:{" "}
+                        <span className="color-word">{card.difficulty}</span>
+                      </p>
                       <nav className="flash-nav">
                         <Link to={`cards/${card._id}`}>View</Link>
                         <Link
