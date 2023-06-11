@@ -11,6 +11,7 @@ import CreatePage from "../CreatePage/CreatePage";
 import EditPage from "../EditPage/EditPage";
 import DeleteConfirmPage from "../DeleteConfirmPage/DeleteConfirmPage";
 import CardDetailPage from "../CardDetailPage/CardDetailPage";
+import LandingPage from "../LandingPage/LandingPage";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -21,6 +22,7 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
+            <Route path="/" element={<LandingPage />} />
             <Route path="/translate" element={<SearchPage />} />
             <Route path="/flashcards" element={<DeckListPage />} />
             <Route path="/flashcards/decks/create" element={<CreatePage />} />
