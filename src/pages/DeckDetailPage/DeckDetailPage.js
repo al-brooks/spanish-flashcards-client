@@ -4,6 +4,7 @@ import * as flashcardsService from "../../utilities/flashcards-service";
 import Search from "../../components/Search/Search";
 
 export default function DeckDetailPage() {
+  const [toggleRender, setToggleRender] = useState(false);
   const [deck, setDeck] = useState(null);
   const [error, setError] = useState("");
   const { d_id } = useParams();
@@ -14,11 +15,12 @@ export default function DeckDetailPage() {
       if (response) {
         setDeck(response);
         setError("");
+        setToggleRender(false);
       }
     } catch {
       setError("Oh no! Something went wrong...");
     }
-  }, [d_id]);
+  }, [d_id, toggleRender]);
 
   useEffect(() => {
     fetchDeck();
@@ -45,7 +47,7 @@ export default function DeckDetailPage() {
         </Link>
         <Link to={"delete"}>Delete Deck</Link>
         <Link to={"cards/create"}>Create a Custom Card</Link>
-        <Search />
+        <Search setToggleRender={setToggleRender} />
         <section>
           <article>
             <h2>{deck.name}</h2>

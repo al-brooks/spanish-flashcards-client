@@ -3,35 +3,33 @@ import { useParams, useNavigate } from "react-router-dom";
 import TranslateForm from "../../components/TranslateForm/TranslateForm";
 import * as flashcardsService from "../../utilities/flashcards-service";
 
-export default function Search() {
+export default function Search({ setToggleRender }) {
   const [translations, setTranslations] = useState({
     searchWord: "",
     terms: []
   });
   const [error, setError] = useState("");
-  const [card, setCard] = useState({
-    content: "",
-    translation: "",
-    difficulty: "New"
-  });
+  const [card, setCard] = useState({});
 
   const deckId = useParams()?.d_id;
   const navigate = useNavigate();
 
-  const handleSubmit = async evt => {
-    evt.preventDefault();
+  const handleRequest = async (headWord, word) => {
     try {
-      for (let el of evt.target.children) {
-        if (el.name === "content" || el.name === "translation") {
-          setCard({
-            ...card,
-            [el.name]: el.value
-          });
-        }
+      const card = {
+        content: headWord,
+        translation: word,
+        difficulty: "New"
+      };
+      setTranslations({
+        searchWord: "",
+        terms: []
+      });
+      const response = await flashcardsService.createCard(deckId, card);
+      if (response) {
+        navigate({ pathname: `/flashcards/decks/${deckId}` });
+        setToggleRender(true);
       }
-      console.log(card);
-      // const response = await flashcardsService.createCard(deckId, card);
-      // if (response) navigate({ pathname: `/flashcards/decks/${deckId}` });
     } catch {
       setError("Card couldn't be created - Try again");
     }
@@ -60,6 +58,10 @@ export default function Search() {
                     <h3>{headWord}</h3>
                     <p>{wordClass}</p>
                     <p>{word}</p>
+
+                    <button onClick={() => handleRequest(headWord, word)}>
+                      +
+                    </button>
                   </article>
                 );
               });
