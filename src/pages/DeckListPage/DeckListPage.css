@@ -9,6 +9,11 @@
   color: var(--color-one-dark);
 }
 
+.deck-list-header p {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
 .deck-list-header a {
   border: 2px solid var(--color-one-dark);
   border-radius: 5px;

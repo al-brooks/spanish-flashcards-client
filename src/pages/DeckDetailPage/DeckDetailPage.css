@@ -11,6 +11,11 @@
   color: var(--color-one-dark);
 }
 
+.deck-detail-header p {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
 .cards-wrapper {
   display: flex;
   flex-direction: row;
@@ -54,6 +59,7 @@
   display: flex;
   justify-content: space-evenly;
   font-size: 1rem;
+  margin-top: 0;
 }
 
 #deck-detail-nav {

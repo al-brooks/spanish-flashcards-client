@@ -38,7 +38,13 @@ export default function DeckDetailPage() {
     return (
       <>
         <div className="deck-detail-header">
-          <h2>Deck Detail Page</h2>
+          <div>
+            <h2>{deck.name}</h2>
+            <p className="card-count">
+              <span className="color-word">{deck.cards.length}</span>
+              {deck.cards.length === 1 ? " Card" : " Cards"}
+            </p>
+          </div>
           <nav id="deck-detail-nav">
             <Link
               to={`edit`}
@@ -55,11 +61,6 @@ export default function DeckDetailPage() {
         <Search setToggleRender={setToggleRender} />
         <section>
           <article>
-            <h2>{deck.name}</h2>
-            <p>
-              {deck.cards.length}
-              {deck.cards.length === 1 ? " Card:" : " Cards:"}
-            </p>
             <section className="cards-wrapper">
               {deck.cards.length > 0 ? (
                 deck.cards.map(card => {
