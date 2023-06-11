@@ -1,6 +1,6 @@
 .TranslateForm form {
   padding-bottom: 2vmin;
-  border-bottom: 3px solid var(--color-three);
+  border-bottom: 1px solid lightgray;
 }
 
 .TranslateForm form input {
