@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: start;
-  padding: 0 5vmin;
 }
 
 .deck-detail-header h2 {
@@ -78,6 +77,8 @@
 #deck-detail-nav {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
+  padding-right: 4vmin;
 }
 
 #deck-detail-nav a {
@@ -86,8 +87,9 @@
   padding: 4px 7px;
   color: var(--color-one-dark);
   font-size: 1.2rem;
+  width: 10rem;
   height: 2.5rem;
-  margin-left: 2vmin;
+  margin-left: 1vmin;
 }
 
 #deck-detail-nav a:hover {

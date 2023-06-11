@@ -54,7 +54,7 @@ export default function TranslateForm({ setTranslations }) {
           placeholder={"Translate Words in English and Spanish..."}
           required
         />
-        <button className="btn" type="submit">
+        <button className="btn btn-color-confirm" type="submit">
           Search
         </button>
       </form>

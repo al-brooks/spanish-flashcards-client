@@ -37,7 +37,7 @@ main {
 nav {
   height: 8vmin;
   width: 100%;
-  font-size: 3.25vmin;
+  font-size: 1.5rem;
   color: var(--color-five-dark);
   margin-top: 2vmin;
 }
@@ -69,7 +69,7 @@ nav a:hover {
   height: 2rem;
   width: 10rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   border: none;
   border-radius: 5px;
 }
@@ -81,6 +81,11 @@ nav a:hover {
 .btn-color-delete {
   background-color: var(--color-three-dark);
   color: white;
+}
+
+.btn-color-confirm {
+  background-color: var(--color-one-dark);
+  color: var(--color-one-light);
 }
 
 .btn-color-cancel {
