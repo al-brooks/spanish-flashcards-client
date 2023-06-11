@@ -11,7 +11,7 @@ export default function NavBar({ user, setUser }) {
     <nav style={{ display: "flex", justifyContent: "space-evenly" }}>
       <Link to={"/"}>Home</Link>
       <Link to={"/translate"}>Translate</Link>
-      <Link to={"/flashcards"}>View Flashcards</Link>
+      <Link to={"/flashcards"}>Flashcards</Link>
       <Link to="" onClick={handleLogOut}>
         Log Out
       </Link>
