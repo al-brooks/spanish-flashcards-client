@@ -12,6 +12,7 @@ import EditPage from "../EditPage/EditPage";
 import DeleteConfirmPage from "../DeleteConfirmPage/DeleteConfirmPage";
 import CardDetailPage from "../CardDetailPage/CardDetailPage";
 import LandingPage from "../LandingPage/LandingPage";
+import Footer from "../../components/Footer/Footer";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -59,6 +60,7 @@ function App() {
           <SearchPage />
         </main>
       )}
+      <Footer />
     </div>
   );
 }
