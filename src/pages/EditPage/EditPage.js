@@ -10,7 +10,7 @@ export default function EditPage() {
   const location = useLocation();
 
   return (
-    <main>
+    <>
       <h1>Edit:</h1>
       {!cardId ? (
         <EditDeck id={deckId} name={location.state.name} />
@@ -23,6 +23,6 @@ export default function EditPage() {
           difficulty={location.state.difficulty}
         />
       )}
-    </main>
+    </>
   );
 }

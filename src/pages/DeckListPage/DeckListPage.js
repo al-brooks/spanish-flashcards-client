@@ -21,7 +21,7 @@ export default function DeckListPage() {
   }, [fetchDecks]);
 
   return (
-    <main>
+    <>
       <h1>Here are your flashcard decks!</h1>
       <section>
         <Link to={"/flashcards/decks/create"}>Create New Deck</Link>
@@ -43,6 +43,6 @@ export default function DeckListPage() {
         )}
       </section>
       <p className="error-msg">&nbsp;{error}</p>
-    </main>
+    </>
   );
 }

@@ -37,7 +37,7 @@ export default function CardDetailPage() {
 
   const loaded = () => {
     return (
-      <main>
+      <>
         <h1>Card Detail Page</h1>
         <Link to={`/flashcards/decks/${d_id}`}>Back to Deck</Link>
         {!toggleCard ? (
@@ -54,7 +54,7 @@ export default function CardDetailPage() {
           </article>
         )}
         <p className="error-msg">&nbsp;{error}</p>
-      </main>
+      </>
     );
   };
   return <>{card ? loaded() : loading()}</>;

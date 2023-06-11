@@ -30,7 +30,7 @@ export default function DeleteConfirmPage() {
   };
 
   return (
-    <main>
+    <>
       <h2>Are you sure you want to delete this?</h2>
       {!cardId ? (
         <form onSubmit={handleDeleteDeck}>
@@ -42,6 +42,6 @@ export default function DeleteConfirmPage() {
         </form>
       )}
       <Link to={`/flashcards/decks/${deckId}`}>Cancel</Link>
-    </main>
+    </>
   );
 }

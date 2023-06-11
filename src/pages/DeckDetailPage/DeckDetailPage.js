@@ -35,7 +35,7 @@ export default function DeckDetailPage() {
 
   const loaded = () => {
     return (
-      <main>
+      <>
         <h1>Deck Detail Page</h1>
         <Link
           to={`edit`}
@@ -82,7 +82,7 @@ export default function DeckDetailPage() {
           </article>
         </section>
         <p className="error-msg">&nbsp;{error}</p>
-      </main>
+      </>
     );
   };
   return <>{deck ? loaded() : loading()}</>;
