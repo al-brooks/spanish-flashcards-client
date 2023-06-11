@@ -58,10 +58,13 @@ export default function Search({ setToggleRender }) {
                     <h3>{headWord}</h3>
                     <p>{wordClass}</p>
                     <p>{word}</p>
-
-                    <button onClick={() => handleRequest(headWord, word)}>
-                      +
-                    </button>
+                    {deckId ? (
+                      <button onClick={() => handleRequest(headWord, word)}>
+                        +
+                      </button>
+                    ) : (
+                      <></>
+                    )}
                   </article>
                 );
               });
