@@ -1,3 +1,16 @@
+.deck-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 0 5vmin;
+}
+
+.deck-detail-header h2 {
+  margin: 0;
+  width: 20rem;
+  color: var(--color-one-dark);
+}
+
 .cards-wrapper {
   display: flex;
   flex-direction: row;
@@ -41,4 +54,25 @@
   display: flex;
   justify-content: space-evenly;
   font-size: 1rem;
+}
+
+#deck-detail-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#deck-detail-nav a {
+  border: 2px solid var(--color-one-dark);
+  border-radius: 5px;
+  padding: 4px 7px;
+  color: var(--color-one-dark);
+  font-size: 1.2rem;
+  height: 2.5rem;
+  margin-left: 2vmin;
+}
+
+#deck-detail-nav a:hover {
+  background-color: var(--color-one-dark);
+  color: white;
+  border: none;
 }

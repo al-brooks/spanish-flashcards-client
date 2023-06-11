@@ -37,17 +37,21 @@ export default function DeckDetailPage() {
   const loaded = () => {
     return (
       <>
-        <h1>Deck Detail Page</h1>
-        <Link
-          to={`edit`}
-          state={{
-            name: deck.name
-          }}
-        >
-          Edit Deck
-        </Link>
-        <Link to={"delete"}>Delete Deck</Link>
-        <Link to={"cards/create"}>Create a Custom Card</Link>
+        <div className="deck-detail-header">
+          <h2>Deck Detail Page</h2>
+          <nav id="deck-detail-nav">
+            <Link
+              to={`edit`}
+              state={{
+                name: deck.name
+              }}
+            >
+              Edit Deck
+            </Link>
+            <Link to={"delete"}>Delete Deck</Link>
+            <Link to={"cards/create"}>&#43; Create Card</Link>
+          </nav>
+        </div>
         <Search setToggleRender={setToggleRender} />
         <section>
           <article>
