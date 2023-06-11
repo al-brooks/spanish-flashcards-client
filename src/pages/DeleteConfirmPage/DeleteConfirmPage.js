@@ -32,16 +32,30 @@ export default function DeleteConfirmPage() {
   return (
     <>
       <h2>Are you sure you want to delete this?</h2>
-      {!cardId ? (
-        <form onSubmit={handleDeleteDeck}>
-          <button type="submit">Yes - Delete Deck</button>
-        </form>
-      ) : (
-        <form onSubmit={handleDeleteCard}>
-          <button type="submit">Yes - Delete Card</button>
-        </form>
-      )}
-      <Link to={`/flashcards/decks/${deckId}`}>Cancel</Link>
+      <div className="flex flex-just-center flex-align-center">
+        {!cardId ? (
+          <form onSubmit={handleDeleteDeck}>
+            <button
+              className="btn btn-lg btn-color-delete mg-right"
+              type="submit"
+            >
+              Yes - Delete Deck
+            </button>
+          </form>
+        ) : (
+          <form onSubmit={handleDeleteCard}>
+            <button
+              className="btn btn-lg btn-color-delete mg-right"
+              type="submit"
+            >
+              Yes - Delete Card
+            </button>
+          </form>
+        )}
+        <Link className="cancel-link" to={`/flashcards/decks/${deckId}`}>
+          Cancel
+        </Link>
+      </div>
     </>
   );
 }
