@@ -36,11 +36,11 @@ export default function EditCard({ deckId, cardId, content, translation }) {
         Edit <span className="color-word">{content}</span> Card
       </h2>
       <form
-        className="form form-deck"
+        className="form form-card"
         autoComplete="off"
         onSubmit={handleSubmit}
       >
-        <label>Front</label>
+        <label>Front:</label>
         <input
           type="text"
           name="content"
@@ -49,7 +49,7 @@ export default function EditCard({ deckId, cardId, content, translation }) {
           placeholder={content}
           required
         />
-        <label>Back</label>
+        <label>Back:</label>
         <input
           type="text"
           name="translation"
@@ -58,7 +58,7 @@ export default function EditCard({ deckId, cardId, content, translation }) {
           placeholder={translation}
           required
         />
-        <label>Difficulty</label>
+        <label>Difficulty:</label>
         <select
           value={card.difficulty}
           name="difficulty"

@@ -38,7 +38,7 @@ export default function EditDeck({ name, id }) {
         autoComplete="off"
         onSubmit={handleSubmit}
       >
-        <label>Name</label>
+        <label>Name:</label>
         <input
           type="text"
           name="name"
