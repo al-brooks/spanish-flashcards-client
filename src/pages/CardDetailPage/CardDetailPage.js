@@ -39,15 +39,17 @@ export default function CardDetailPage() {
     return (
       <main>
         <h1>Card Detail Page</h1>
-        <Link to={`/flashcards/decks/${d_id}`}>Back</Link>
+        <Link to={`/flashcards/decks/${d_id}`}>Back to Deck</Link>
         {!toggleCard ? (
           <article>
             <p>Front of Card</p>
+            <p>{card.content}</p>
             <button onClick={handleToggle}>Back</button>
           </article>
         ) : (
           <article>
             <p>Back of Card</p>
+            <p>{card.translation}</p>
             <button onClick={handleToggle}>Front</button>
           </article>
         )}
