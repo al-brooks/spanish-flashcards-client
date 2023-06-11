@@ -195,11 +195,20 @@ nav a:hover {
   font-weight: 800;
 }
 
-.form input {
+.form input,
+.form select {
   width: 10rem;
   font-size: 1.1rem;
 }
 
+.form select {
+  text-align: center;
+}
+
 .form-deck {
   height: 10rem;
+}
+
+.form-deck {
+  height: 18rem;
 }

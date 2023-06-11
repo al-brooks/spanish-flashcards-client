@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as flashcardsService from "../../utilities/flashcards-service";
 
 export default function EditCard({ deckId, cardId, content, translation }) {
@@ -31,9 +31,15 @@ export default function EditCard({ deckId, cardId, content, translation }) {
   };
 
   return (
-    <>
-      <h3>Card Form</h3>
-      <form autoComplete="off" onSubmit={handleSubmit}>
+    <section className="flex flex-col">
+      <h2>
+        Edit <span className="color-word">{content}</span> Card
+      </h2>
+      <form
+        className="form form-deck"
+        autoComplete="off"
+        onSubmit={handleSubmit}
+      >
         <label>Front</label>
         <input
           type="text"
@@ -64,9 +70,14 @@ export default function EditCard({ deckId, cardId, content, translation }) {
           <option value="Easy">Easy</option>
           <option value="Fluent">Fluent</option>
         </select>
-        <button type="submit">Create</button>
+        <button className="btn btn-color-confirm" type="submit">
+          Create
+        </button>
       </form>
+      <Link className="cancel-link" to={`/flashcards/decks/${deckId}`}>
+        Cancel
+      </Link>
       <p className="error-msg">&nbsp;{error}</p>
-    </>
+    </section>
   );
 }
