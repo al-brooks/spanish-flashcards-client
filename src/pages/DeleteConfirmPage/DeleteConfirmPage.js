@@ -12,7 +12,6 @@ export default function DeleteConfirmPage() {
     evt.preventDefault();
     try {
       const response = await flashcardsService.deleteDeck(deckId);
-      console.log(response);
       if (response) navigate({ pathname: `/flashcards` });
     } catch {
       setError("Something went wrong - Try again");

@@ -10,7 +10,6 @@ export default function DeckListPage() {
   const fetchDecks = useCallback(async () => {
     try {
       const response = await flashcardsService.getAllDecks();
-      console.log(response);
       setDecks(response);
       setError("");
     } catch {
