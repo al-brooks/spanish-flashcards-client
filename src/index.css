@@ -173,6 +173,12 @@ nav a:hover {
 
 .color-word {
   color: var(--color-one-dark);
+  font-weight: 800;
+}
+
+.color-blue {
+  color: var(--color-five-dark);
+  font-weight: 800;
 }
 
 .bg-color-one {
