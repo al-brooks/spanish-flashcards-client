@@ -23,7 +23,7 @@ export default function CardDetailPage() {
     } catch {
       setError("Oh no! Something went wrong...");
     }
-  }, [c_id]);
+  }, [d_id, c_id]);
 
   useEffect(() => {
     fetchCard();
