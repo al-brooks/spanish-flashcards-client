@@ -44,11 +44,16 @@ export default function Search({ setToggleRender }) {
   const loadedTranslations = () => {
     return (
       <section className="flex flex-col card-wrapper">
-        {translations.terms.map(result => {
-          let id = result.meta.id;
-          let headWord = id.split(":")[0];
+        {translations.terms
+          .filter(result => {
+            let id = result.meta.id;
+            let headWord = id.split(":")[0];
+            return translations.searchWord.includes(headWord);
+          })
+          .map(result => {
+            let id = result.meta.id;
+            let headWord = id.split(":")[0];
 
-          if (translations.searchWord.includes(headWord)) {
             let wordClass = result.fl;
             let abridgedDefs = result.shortdef[0]
               .replace(/\([^)]*\)/g, "")
@@ -76,8 +81,7 @@ export default function Search({ setToggleRender }) {
                 </article>
               );
             });
-          }
-        })}
+          })}
       </section>
     );
   };
