@@ -22,7 +22,8 @@ Once you're on the site, you can navigate to our Translation page to test out di
 ## SpanishFlash Screenshots:
 
 ### Landing Page - For Guests
-<img width="1000" alt="guest landing page" src="https://github.com/al-brooks/spanish-flashcards-client/assets/47277927/11aa75d2-99d7-4825-b16f-1828bd1c9dc3">
+<img width="1000" alt="Screen Shot 2023-06-12 at 12 39 59 PM" src="https://github.com/al-brooks/spanish-flashcards-client/assets/47277927/43b49b79-f112-45a5-ab9e-41d3da1559cd">
+
 
 ### Translation Search Page
 <img width="1000" alt="search translations page" src="https://github.com/al-brooks/spanish-flashcards-client/assets/47277927/54ee362b-c4ce-4f7f-a92e-683be1d28bc8">
