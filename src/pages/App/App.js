@@ -24,7 +24,7 @@ function App() {
         <>
           <main>
             <Routes>
-              <Route path="/" element={<LandingPage />} />
+              <Route path="/" element={<LandingPage user={user} />} />
               <Route path="/flashcards" element={<DeckListPage />} />
               <Route path="/flashcards/decks/create" element={<CreatePage />} />
               <Route

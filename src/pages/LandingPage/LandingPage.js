@@ -1,9 +1,11 @@
 import "./LandingPage.css";
 
-export default function LandingPage() {
+export default function LandingPage({ user }) {
   return (
     <section className="LandingPage">
-      <h1>¡Bienvenido!</h1>
+      <h1>
+        ¡Bienvenido! <span className="color-blue">{user.name}</span>
+      </h1>
       <p>
         <span className="color-blue">Spanish</span>
         <span className="color-word">Flash</span> allows you to create
