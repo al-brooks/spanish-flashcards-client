@@ -9,7 +9,6 @@ export default function Search({ setToggleRender }) {
     terms: []
   });
   const [error, setError] = useState("");
-  const [card, setCard] = useState({});
 
   const deckId = useParams()?.d_id;
   const navigate = useNavigate();
@@ -45,7 +44,7 @@ export default function Search({ setToggleRender }) {
   const loadedTranslations = () => {
     return (
       <section className="flex flex-col card-wrapper">
-        {translations.terms.map((result, idx) => {
+        {translations.terms.map(result => {
           let id = result.meta.id;
           let headWord = id.split(":")[0];
 
