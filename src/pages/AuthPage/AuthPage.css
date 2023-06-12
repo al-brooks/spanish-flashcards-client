@@ -1,4 +1,11 @@
 .AuthPage {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.AuthPage .welcome {
+  font-size: 1.2rem;
+  width: 30rem;
 }
