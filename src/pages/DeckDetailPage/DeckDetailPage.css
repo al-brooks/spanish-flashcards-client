@@ -18,9 +18,10 @@
 .cards-wrapper {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 4vmin;
+  gap: 2vmin;
+  margin: 0 4vmin;
 }
 
 .flash-card {
