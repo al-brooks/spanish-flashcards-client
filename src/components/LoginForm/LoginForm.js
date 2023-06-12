@@ -29,7 +29,7 @@ export default function LoginForm({ setUser }) {
 
   return (
     <section className="flex flex-col">
-      <h2>Welcom Back</h2>
+      <h2>Welcome Back</h2>
       <form
         className="form form-card"
         autoComplete="off"
