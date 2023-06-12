@@ -68,10 +68,13 @@ export default function Search({ setToggleRender }) {
                     <span className="color-word card-grammar">{wordClass}</span>
                   </p>
 
-                  <div className="flex flex-align-end">
+                  <div className="flex flex-align-center">
                     <p className="card-translation">{word}</p>
                     {deckId ? (
-                      <button onClick={() => handleRequest(headWord, word)}>
+                      <button
+                        className="plus-btn"
+                        onClick={() => handleRequest(headWord, word)}
+                      >
                         +
                       </button>
                     ) : (

@@ -75,6 +75,21 @@
   text-transform: lowercase;
 }
 
+.plus-btn {
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-one);
+  margin-left: 1vmin;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.plus-btn:hover {
+  cursor: pointer;
+  background-color: var(--color-one-dark);
+  color: white;
+}
+
 #deck-detail-nav {
   display: flex;
   justify-content: flex-end;

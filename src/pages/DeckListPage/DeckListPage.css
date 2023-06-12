@@ -32,6 +32,7 @@
 .decks-wrapper {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 4vmin;
   margin: 0 4vmin;
