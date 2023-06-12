@@ -40,7 +40,7 @@ export default function AuthPage({ setUser }) {
           custom cards for all your studying needs.
         </p>
         <p>
-          Test out our translation tool below! Just search the word you'd like
+          Test out our translation page! Just search the word you'd like
           translated.
         </p>
       </section>

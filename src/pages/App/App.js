@@ -25,7 +25,6 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<LandingPage />} />
-              <Route path="/translate" element={<SearchPage />} />
               <Route path="/flashcards" element={<DeckListPage />} />
               <Route path="/flashcards/decks/create" element={<CreatePage />} />
               <Route
@@ -61,7 +60,10 @@ function App() {
         </>
       ) : (
         <main>
-          <AuthPage path="/" setUser={setUser} />
+          <Routes>
+            <Route path="/" element={<AuthPage setUser={setUser} />} />
+            <Route path="/translate" element={<SearchPage />} />
+          </Routes>
         </main>
       )}
       <Footer />
