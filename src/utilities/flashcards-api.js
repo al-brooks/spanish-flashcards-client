@@ -1,5 +1,5 @@
 import sendRequest from "./send-request";
-const DECKS_URL = "/api/decks";
+const DECKS_URL = "https://spanish-flashcards.herokuapp.com/api/decks";
 
 export function createDeck(data) {
   return sendRequest(DECKS_URL, "POST", data);
