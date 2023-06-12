@@ -62,7 +62,6 @@ function App() {
       ) : (
         <main>
           <AuthPage path="/" setUser={setUser} />
-          <SearchPage />
         </main>
       )}
       <Footer />

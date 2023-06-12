@@ -12,9 +12,9 @@ export default function NavBar({ user, setUser }) {
       <Link to={"/"}>
         Spanish<span className="color-word">Flash</span>
       </Link>
+      <Link to={"/translate"}>Translate</Link>
       {user ? (
         <>
-          <Link to={"/translate"}>Translate</Link>
           <Link to={"/flashcards"}>Flashcards</Link>
           <Link to="" onClick={handleLogOut}>
             Log Out
