@@ -213,3 +213,13 @@ nav a:hover {
 .form-card {
   height: 18rem;
 }
+
+.form-lg {
+  height: 22rem;
+  width: 24rem;
+}
+
+.form-lg input,
+.form-lg select {
+  width: 15rem;
+}

@@ -10,19 +10,24 @@ export default function AuthPage({ setUser }) {
   };
 
   return (
-    <main>
-      <h1>Auth Page</h1>
+    <>
       {formToggle ? (
-        <>
-          <button onClick={handleToggle}>Sign Up</button>
+        <section className="AuthPage">
+          <h3>Not a Member?</h3>
+          <button className="btn btn-color-cancel" onClick={handleToggle}>
+            Sign Up
+          </button>
           <LoginForm setUser={setUser} />
-        </>
+        </section>
       ) : (
-        <>
-          <button onClick={handleToggle}>Log In</button>
+        <section className="AuthPage">
+          <h3>Already Have a Login?</h3>
+          <button className="btn btn-color-cancel" onClick={handleToggle}>
+            Log In
+          </button>
           <SignUpForm setUser={setUser} />
-        </>
+        </section>
       )}
-    </main>
+    </>
   );
 }

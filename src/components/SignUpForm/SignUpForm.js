@@ -35,47 +35,50 @@ export default function SignUpForm({ setUser }) {
   const disable = userData.password !== userData.confirm;
 
   return (
-    <div>
-      <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            value={userData.name}
-            onChange={handleChange}
-            required
-          />
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            value={userData.email}
-            onChange={handleChange}
-            required
-          />
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            value={userData.password}
-            onChange={handleChange}
-            required
-          />
-          <label>Confirm Password</label>
-          <input
-            type="password"
-            name="confirm"
-            value={userData.confirm}
-            onChange={handleChange}
-            required
-          />
-          <button type="submit" disabled={disable}>
-            Sign Up
-          </button>
-        </form>
-      </div>
+    <section className="flex flex-col">
+      <h2>We&#39;re Happy You&#39;re Joining!</h2>
+      <form className="form form-lg" autoComplete="off" onSubmit={handleSubmit}>
+        <label>Name</label>
+        <input
+          type="text"
+          name="name"
+          value={userData.name}
+          onChange={handleChange}
+          required
+        />
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          value={userData.email}
+          onChange={handleChange}
+          required
+        />
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          value={userData.password}
+          onChange={handleChange}
+          required
+        />
+        <label>Confirm Password</label>
+        <input
+          type="password"
+          name="confirm"
+          value={userData.confirm}
+          onChange={handleChange}
+          required
+        />
+        <button
+          className="btn btn-color-confirm"
+          type="submit"
+          disabled={disable}
+        >
+          Sign Up
+        </button>
+      </form>
       {error ? <p className="error-msg">&nbsp;{error}</p> : <></>}
-    </div>
+    </section>
   );
 }
