@@ -21,6 +21,7 @@ export default function DeckDetailPage() {
     } catch {
       setError("Oh no! Something went wrong...");
     }
+    // eslint-disable-next-line
   }, [d_id, toggleRender]);
 
   useEffect(() => {
