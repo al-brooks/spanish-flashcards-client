@@ -50,7 +50,7 @@ export default function LoginForm({ setUser }) {
           <button type="submit">Log In</button>
         </form>
       </div>
-      <p className="error-msg">&nbsp;{error}</p>
+      {error ? <p className="error-msg">&nbsp;{error}</p> : <></>}
     </div>
   );
 }

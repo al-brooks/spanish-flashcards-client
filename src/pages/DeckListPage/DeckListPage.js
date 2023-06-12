@@ -64,7 +64,7 @@ export default function DeckListPage() {
           <p>No decks so far...</p>
         )}
       </section>
-      <p className="error-msg">&nbsp;{error}</p>
+      {error ? <p className="error-msg">&nbsp;{error}</p> : <></>}
     </>
   );
 }

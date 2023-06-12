@@ -54,7 +54,7 @@ export default function EditDeck({ name, id }) {
       <Link className="cancel-link" to={`/flashcards/decks/${id}`}>
         Cancel
       </Link>
-      <p className="error-msg">&nbsp;{error}</p>
+      {error ? <p className="error-msg">&nbsp;{error}</p> : <></>}
     </section>
   );
 }

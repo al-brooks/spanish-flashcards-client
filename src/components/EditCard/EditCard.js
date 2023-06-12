@@ -77,7 +77,7 @@ export default function EditCard({ deckId, cardId, content, translation }) {
       <Link className="cancel-link" to={`/flashcards/decks/${deckId}`}>
         Cancel
       </Link>
-      <p className="error-msg">&nbsp;{error}</p>
+      {error ? <p className="error-msg">&nbsp;{error}</p> : <></>}
     </section>
   );
 }
