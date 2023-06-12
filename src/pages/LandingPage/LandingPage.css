@@ -1,0 +1,17 @@
+.LandingPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vmin;
+}
+
+.LandingPage h1 {
+  font-size: 2rem;
+  color: var(--color-one-dark);
+}
+
+.LandingPage p {
+  font-size: 1.2rem;
+  text-align: justify;
+  width: 19rem;
+}
