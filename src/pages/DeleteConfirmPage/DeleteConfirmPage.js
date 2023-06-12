@@ -56,6 +56,7 @@ export default function DeleteConfirmPage() {
           Cancel
         </Link>
       </div>
+      {error ? <p className="error-msg">&nbsp;{error}</p> : <></>}
     </>
   );
 }
