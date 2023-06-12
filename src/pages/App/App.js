@@ -19,9 +19,9 @@ function App() {
 
   return (
     <div className="App flex flex-col flex-space-be">
+      <NavBar user={user} setUser={setUser} />
       {user ? (
         <>
-          <NavBar user={user} setUser={setUser} />
           <main>
             <Routes>
               <Route path="/" element={<LandingPage />} />
