@@ -1,4 +1,8 @@
-.TranslateForm form {
+.TranslateForm form:after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 25rem;
   padding-bottom: 2vmin;
   border-bottom: 1px solid lightgray;
 }
