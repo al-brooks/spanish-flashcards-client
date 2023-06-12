@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
-import * as flashcardsService from "../../utilities/flashcards-service";
 import EditDeck from "../../components/EditDeck/EditDeck";
 import EditCard from "../../components/EditCard/EditCard";
 
